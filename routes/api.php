@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\http\Controllers\Api\ApiResortController;
+use App\Http\Controllers\Api\ApiResortController;
+use App\Http\Controllers\SanctumAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/resorts', [ApiResortController::class,'index']);
+
+Route::post('register', [SanctumAuthController::class, 'register']);
+Route::post('login', [SanctumAuthController::class, 'login']);
